@@ -1,0 +1,46 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}VaoyageOrganise{% endblock %}
+
+{% block content %}
+    <h1>VaoyageOrganise</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vaoyage_organise.id }}</td>
+            </tr>
+            <tr>
+                <th>DateDepart</th>
+                <td>{{ vaoyage_organise.DateDepart ? vaoyage_organise.DateDepart|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>NbreJour</th>
+                <td>{{ vaoyage_organise.NbreJour }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ vaoyage_organise.Prix }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ vaoyage_organise.Title }}</td>
+            </tr>
+            <tr>
+                <th>Cover</th>
+                <td>{{ vaoyage_organise.Cover }}</td>
+            </tr>
+            <tr>
+                <th>Programme</th>
+                <td>{{ vaoyage_organise.Programme }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vaoyage_organise_index') }}">back to list</a>
+
+    <a href="{{ path('vaoyage_organise_edit', {'id': vaoyage_organise.id}) }}">edit</a>
+
+    {{ include('admin/vaoyage_organise/_delete_form.html.twig') }}
+{% endblock %}

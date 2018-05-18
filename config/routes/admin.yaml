@@ -1,0 +1,40 @@
+admin_index:
+    path: /
+    controller: App\Controller\admin\DefaultController::index
+
+
+#routes for users
+admin_users:
+    path: /users
+    controller: App\Controller\admin\UsersController::index
+
+admin_user_add:
+    path: /user/add
+    controller: App\Controller\admin\UsersController::add
+
+admin_user_update:
+    path: /user/update/{id}
+    controller: App\Controller\admin\UsersController::updateUser
+
+admin_user_delete:
+    path: /user/delete/{id}
+    controller: App\Controller\admin\UsersController::delete
+
+#routes for Reservation
+admin_reservation:
+    path: /reservations
+    controller: App\Controller\admin\ReservationController::index
+
+admin_reservation_add:
+    path: /reservation/add
+    controller: App\Controller\admin\ReservationController::add
+
+admin_reservation_update:
+    path: /reservation/update/{id}
+    controller: App\Controller\admin\ReservationController::updateReservation
+
+admin_reservation_delete:
+    path: /reservation/delete/{id}
+    controller: App\Controller\admin\ReservationController::delete
+
+

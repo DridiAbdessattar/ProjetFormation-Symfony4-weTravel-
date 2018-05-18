@@ -1,0 +1,15 @@
+admin_route:
+    resource: 'routes/admin.yaml'
+    prefix: /admin
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+
+
+
+
+
+
+

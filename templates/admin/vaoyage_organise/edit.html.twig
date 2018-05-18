@@ -1,0 +1,13 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Edit VaoyageOrganise{% endblock %}
+
+{% block content %}
+    <h1>Edit VaoyageOrganise</h1>
+
+    {{ include('admin/vaoyage_organise/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('vaoyage_organise_index') }}">back to list</a>
+
+    {{ include('admin/vaoyage_organise/_delete_form.html.twig') }}
+{% endblock %}

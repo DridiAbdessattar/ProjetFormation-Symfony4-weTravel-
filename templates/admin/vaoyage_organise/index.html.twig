@@ -1,0 +1,47 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}VaoyageOrganise index{% endblock %}
+
+{% block content %}
+    <h1>VaoyageOrganise index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DateDepart</th>
+                <th>NbreJour</th>
+                <th>Prix</th>
+                <th>Title</th>
+                <th>Cover</th>
+                <th>Programme</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vaoyage_organise in vaoyage_organises %}
+            <tr>
+                <td>{{ vaoyage_organise.id }}</td>
+                <td>{{ vaoyage_organise.DateDepart ? vaoyage_organise.DateDepart|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ vaoyage_organise.NbreJour }}</td>
+                <td>{{ vaoyage_organise.Prix }}</td>
+                <td>{{ vaoyage_organise.Title }}</td>
+                <td>
+                    <img src="{{ asset('uploads/'~vaoyage_organise.Cover) }}" width="75" height="75">
+                </td>
+                <td>{{ vaoyage_organise.Programme }}</td>
+                <td>
+                    <a href="{{ path('vaoyage_organise_show', {'id': vaoyage_organise.id}) }}">show</a>
+                    <a href="{{ path('vaoyage_organise_edit', {'id': vaoyage_organise.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('vaoyage_organise_new') }}">Create new</a>
+{% endblock %}
